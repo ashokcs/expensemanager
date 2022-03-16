@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ExpenseDataService from "../service";
 import Expense from "./Expense";
 import './list.css'; 
+import Logout from "../../Logout";
 export default class ExpenseList extends Component {
   constructor(props) {
     super(props);
@@ -49,15 +50,21 @@ export default class ExpenseList extends Component {
     return (
       <div className="list row">
         <div className="col-md-6">
-          <h4 className="header">Expenses List</h4>
+          <div className="minirow">
+            <div className="minicolumn">
+                  <h4 className="header">Expenses List</h4>
+              </div>
+              <div id="logout" className="minicolumn">
+                <Logout/>
+              </div>
+          </div>
           <ul className="list-group">
             {expenses &&
               expenses.map((expense, index) => (
                 <li
-                  className={ "note" }
-                  //onClick={() => this.setActiveTutorial(expense, index)}
-                  key={index}>
-                  <p className="expese_name">{expense.name}, {expense.description}</p> <h4 className="amount">CAD$ {expense.amount}</h4> 
+                  className={ "note" } key={index}>
+                  <p className="expese_name">{expense.name + "   -      " + expense.description}</p> <h4 className="amount">CAD$ {expense.amount}</h4> 
+
                 </li>
               ))}
           </ul>

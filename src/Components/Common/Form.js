@@ -5,9 +5,10 @@ import Button from './Button';
 export default function BasicTextFields({ title, setPassword, setEmail, handleAction }) {
     return (
         <div>
+            <h2 id="title">Expense Manager App</h2>
             <div className="heading-container">
-                <h3>
-                    {title} Form
+                <h3 id="login">
+                    User {title}
                 </h3>
             </div>
 
@@ -21,13 +22,15 @@ export default function BasicTextFields({ title, setPassword, setEmail, handleAc
             >
                 <TextField
                     id="email"
-                    label="Enter the Email"
+                    label="Email id"
                     variant="outlined"
                     onChange={(e) => setEmail(e.target.value)}
                 />
+                <p></p>
                 <TextField
                     id="password"
-                    label="Enter the Password"
+                    type="password"
+                    label="Password"
                     variant="outlined"
                     onChange={(e) => setPassword(e.target.value)}
                 />

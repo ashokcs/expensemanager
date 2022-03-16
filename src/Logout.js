@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ExpenseList from './expense/List.js';
-import Receipts from './expense/Receipts.js';
 
-
-export default function Home() {
+export default function Logout() {
     const handleLogout = () => {
         sessionStorage.removeItem('Auth Token');
         navigate('/login')
@@ -23,9 +20,7 @@ export default function Home() {
     }, [])
     return (
         <div>
-            <p></p>
-            <ExpenseList/>
-            <Receipts/>
+             <button className="button" onClick={handleLogout}>Log out</button>
         </div>
     )
 }

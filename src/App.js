@@ -118,8 +118,6 @@ listAll(listRef)
               <Home />}
           />
         </Routes>
-        <h3> Recent Receipts </h3>
-        <Receipts />
       </>
     </div>
   );
